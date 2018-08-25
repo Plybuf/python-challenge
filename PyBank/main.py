@@ -4,7 +4,7 @@ import csv
 #import datetime to deal with dates column
 from datetime import datetime
 
-#Path to the budget_data.csv file. Note script is in different area than .csv
+#Path to the budget_data.csv file.
 PyBankCSV = os.path.join("Resources","budget_data.csv")
 
 #create lists to store the two columns of CSV data
@@ -18,11 +18,7 @@ totalprofit = 0
 maxprofit = 0
 minprofit = 0
 
-#define a function that gives the sum of the profit and losses
-#def summary(ProfitBank):
-
-    
-    
+  
 
 #Read CSV file using "with open" and csv module
 with open(PyBankCSV, newline="") as csvfile:
