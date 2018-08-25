@@ -5,7 +5,7 @@ import csv
 from datetime import datetime
 
 #Path to the budget_data.csv file. Note script is in different area than .csv
-PyBankCSV = os.path.join("../..","RutgersDataBootCamp/Homework/03-Python/PyBank/Resources","budget_data.csv")
+PyBankCSV = os.path.join("Resources","budget_data.csv")
 
 #create lists to store the two columns of CSV data
 dates = []
@@ -65,12 +65,25 @@ averageprofit = totalprofit / len(profit_loss)
 num_months = len(dates)
 
 #print the results to the terminal
-print(f"Financial Analysis   \n----------------------  \nTotal Months: {str(num_months)} \nTotal: ${str(totalprofit)} \nAverage Change: ${str(averageprofit)} \nGreatest Increase in Profits: {str(maxprofitdate)} (${str(maxprofit)})  \nGreatest Decrease in Profits: {str(minprofitdate)} (${str(minprofit)})")
-
+print("Financial Analysis")
+print("----------------------")
+print(f"Total Months: {str(num_months)}")
+print(f"Total: ${str(totalprofit)}")
+print(f"Average Change: ${str(averageprofit)}")
+print(f"Greatest Increase in Profits: {str(maxprofitdate)} (${str(maxprofit)})")
+print(f"Greatest Decrease in Profits: {str(minprofitdate)} (${str(minprofit)})")
 
 #locate the output file
 analysis_path = os.path.join("Output","Analysis.txt")
 
 
-#open the output text file
-with open()
+#open the output text file and write lines to file
+Bankout = open(analysis_path, "w")
+Bankout.write("Financial Analysis\n")
+Bankout.write("----------------------\n")
+Bankout.write(f"Total Months: {str(num_months)}\n")
+Bankout.write(f"Total: ${str(totalprofit)}\n")
+Bankout.write(f"Average Change: ${str(averageprofit)}\n")
+Bankout.write(f"Greatest Increase in Profits: {str(maxprofitdate)} (${str(maxprofit)})\n")
+Bankout.write(f"Greatest Decrease in Profits: {str(minprofitdate)} (${str(minprofit)})\n") 
+Bankout.close()
